@@ -34,7 +34,7 @@ $ warble
 Which produces a .war file named "s3.war". Grab this and deploy to
 your favorite servlet container. Navigate to:
 
-http://<your server>/s3
+http://&lt;your server name here&gt;/s3
 
 And you'll see a listing of the account(s) you configured in s3.yml.
 Select an account and you'll see the bucket(s) for that account. Select
