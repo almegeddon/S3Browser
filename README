@@ -14,6 +14,16 @@ In the form of:
   aws_access_key_id:<access key id>
   aws_secret_access_key:<access key>
 
+Example:
+
+dev:
+  aws_access_key_id:<access key id>
+  aws_secret_access_key:<access key>
+
+prod:
+  aws_access_key_id:<access key id>
+  aws_secret_access_key:<access key>
+
 Do this for each account you'd like accessible for browsing.
 
 To package, run the following from <ROOT>:
