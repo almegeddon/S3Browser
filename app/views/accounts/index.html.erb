@@ -1,0 +1,8 @@
+<h3>Available S3 Accounts</h3>
+<div class="active">
+    <table>
+    <% @accounts.each do |account| %>
+        <tr><td><%=link_to account, "#{account}" %></td></tr>
+    <% end %>
+    </table>
+</div>

@@ -1,4 +1,32 @@
-A read-only S3 Object/Bucket browser webapp. Inspired by the
-Firefox s3:// plugin as I loved using the browser's address
-bar to navigate S3 virtual directories.
+A read-only S3 Object/Bucket browser JRuby Rails App inspired by the
+Firefox s3:// plugin. I loved using the browser's address bar to navigate
+S3 virtual directories, but needed a way to seamlessly support multiple
+S3 accounts without re-configuring on the fly.
 
+You'll need to configure your S3 account(s) credentials by creating the
+following file:
+
+<ROOT>/config/s3.yml
+
+In the form of:
+
+<account_name>:
+  aws_access_key_id:<access key id>
+  aws_secret_access_key:<access key>
+
+Do this for each account you'd like accessible for browsing.
+
+To package, run the following from <ROOT>:
+
+$ jruby -S bundle install
+$ warble
+
+Which produces a .war file named "s3.war". Grab this and deploy to
+your favorite servlet container. Navigate to:
+
+http://localhost:8080/s3
+
+And you'll see a listing of the account(s) you configured in s3.yml.
+Select an account and you'll see the bucket(s) for that account. Select
+a bucket and you'll see the object(s) and common prefixes for that bucket.
+You get the idea, browse away....

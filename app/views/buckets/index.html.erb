@@ -1,0 +1,8 @@
+<h3>Buckets for Account: <%= @account %></h3>
+<div class="active">
+    <table>
+    <% @buckets.each do |bucket| %>
+        <tr><td><%=link_to bucket, "#{@account}/#{bucket}" %></td></tr>
+    <% end %>
+    </table>
+</div>

@@ -1,0 +1,48 @@
+<h3>
+    <%= link_to "s3", root_url %>://<%= link_to @bucket, @buckets %>
+    <%
+      if @prefix
+        paths = @prefix.split('/')
+        path = "#{@account}/#{@bucket}/"
+        paths.each_index do |x|
+          if x + 1 == paths.length
+    %>
+        /<%= paths[x] %>
+    <%
+          else
+          path += "#{paths[x]}/"
+    %>
+        /<%= link_to paths[x], "#{root_url}#{path}" %>
+    <%
+          end
+        end
+      end
+    %>
+</h3>
+
+<div class="active">
+    <table width="100%">
+        <thead>
+            <td><strong>Key</strong></td>
+            <td><strong>Last Modified</strong></td>
+            <td><strong>Size</strong></td>
+        </thead>
+        <tbody>
+            <% @prefixes.each do |prefix| %>
+            <tr>
+                <td><%=link_to prefix, "#{root_url}#{@account}/#{@bucket}/#{prefix}" %></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <% end %>
+
+            <% @objects.each do |object| %>
+            <tr>
+                <td><%=link_to "#{object[:key]}", :controller => "objects", :action => "show", :bucket => @bucket, :key => object[:key], :account => @account %></td>
+                <td><%= Time.parse(object[:last_modified]).localtime.strftime("%m/%d/%Y @ %I:%M:%S %p %Z") %></td>
+                <td><%= number_to_human_size object[:size] %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

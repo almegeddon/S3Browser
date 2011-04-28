@@ -1,0 +1,22 @@
+body {
+  background: #eee;
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+a {
+  color: #04f;
+}
+
+.active {
+  background: #fff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 20px 0;
+  min-height: 100px;
+}
