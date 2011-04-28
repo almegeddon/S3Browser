@@ -1,0 +1,4 @@
+A read-only S3 Object/Bucket browser webapp. Inspired by the
+Firefox s3:// plugin as I loved using the browser's address
+bar to navigate S3 virtual directories.
+
